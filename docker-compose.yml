@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  api-server:
+    image: api-server
+    build: .
+    env_file: .env
+    ports:
+      - 5000:5000
+    networks:
+      - shared-networks
+networks:
+  shared-networks:
+    driver: bridge
+
